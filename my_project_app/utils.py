@@ -14,10 +14,10 @@ class MedicalInsurance():
         self.region = 'region_' + region
 
     def load_model(self):
-        with open('my_project_app\Linear_model.pkl', 'rb') as f:
+        with open(config.MODEL_FILE_PATH, 'rb') as f:
             self.model = pickle.load(f)
 
-        with open('my_project_app\project_data.json', 'rb') as f:
+        with open(config.JSON_FILE_PATH, 'rb') as f:
             self.project_data = json.load(f)
 
     def get_predicted_charges(self):
