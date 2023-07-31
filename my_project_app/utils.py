@@ -1,7 +1,7 @@
 import pickle
 import json
 import numpy as np
-import config
+from config import JSON_FILE_PATH, MODEL_FILE_PATH
 
 class MedicalInsurance():
     
@@ -14,10 +14,10 @@ class MedicalInsurance():
         self.region = 'region_' + region
 
     def load_model(self):
-        with open("my_project_app\Linear_model.pkl", 'rb') as f:
+        with open(MODEL_FILE_PATH, 'rb') as f:
             self.model = pickle.load(f)
 
-        with open("my_project_app\project_data.json", 'rb') as f:
+        with open(JSON_FILE_PATH, 'rb') as f:
             self.project_data = json.load(f)
 
     def get_predicted_charges(self):
